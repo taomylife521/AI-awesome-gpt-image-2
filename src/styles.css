@@ -1336,13 +1336,22 @@ button {
 
 .cardActions {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 42px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
   margin-top: 16px;
 }
 
 .caseActions {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 42px;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.caseActions > * {
+  grid-column: span 2;
+}
+
+.caseActions > :nth-child(4),
+.caseActions > :nth-child(5) {
+  grid-column: span 3;
 }
 
 .templateActions {
@@ -1356,14 +1365,19 @@ button {
   justify-content: center;
   gap: 8px;
   min-width: 0;
+  max-width: 100%;
   min-height: 42px;
+  padding: 8px 10px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.08);
   color: #ffffff;
   font-weight: 800;
+  line-height: 1.15;
   text-align: center;
-  white-space: nowrap;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  white-space: normal;
 }
 
 .cardActions button:hover,

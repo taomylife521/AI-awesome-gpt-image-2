@@ -2598,6 +2598,7 @@ function PromptCard({
           </button>
           <a href={caseItem.githubUrl} target="_blank" rel="noreferrer" aria-label={t.openOnGithub}>
             <Github size={18} />
+            GitHub
           </a>
         </div>
       </div>
